@@ -70,24 +70,15 @@ function DefaultLayout(props: PropsWithChildren<{ children: React.ReactNode }>) 
                 <div className="demo-logo-vertical" />
                 {/* <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} /> */}
                 <Menu
-                    mode='inline'
                     theme="dark"
+                    mode="inline"
                 >
-                    <Menu
-                        theme="dark"
-                        mode="inline"
-                    >
-                        {renderTreeMenu(menuItemData)}
-                    </Menu>
+                    {renderTreeMenu(menuItemData)}
                 </Menu>
             </Sider>
             <Layout>
                 <Header style={{ padding: 0, background: colorBgContainer }} />
-                <Content style={{ margin: '0 16px' }}>
-                    <Breadcrumb style={{ margin: '16px 0' }}>
-                        <Breadcrumb.Item>User</Breadcrumb.Item>
-                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                    </Breadcrumb>
+                <Content className='m-4'>
                     {children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
