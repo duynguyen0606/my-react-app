@@ -1,28 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css';
 import DefaultLayout from './components/Layouts/DefaultLayout';
+import { COURSE_CATEGORIES, COURSE_DATA } from './config/routers';
 
 function App() {
   return (
-    <DefaultLayout>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </DefaultLayout>
+    <Router>
+      <DefaultLayout>
+        <Routes >
+          <Route path={COURSE_CATEGORIES} element={<div>course cate</div>} />
+          <Route path={COURSE_DATA} element={<div>course dât</div>} />
+          {/* <PrivateRoute path="/su-kien" component={EventsPage} />
+          <PrivateRoute path="/tin-tuc" component={NewsPage} />
+          <PrivateRoute path="/danh-muc-tin-tuc" component={CategoryNewsPage} />
+          <PrivateRoute path="/phan-hoi" component={FeedbackPage} /> */}
+        </Routes >
+      </DefaultLayout>
+    </Router>
   );
 }
 
